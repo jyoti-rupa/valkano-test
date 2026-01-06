@@ -1,5 +1,10 @@
 import time
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -37,19 +42,19 @@ time.sleep(10)
 driver.find_element(By.XPATH,"/html/body/div[2]/header/div/div[2]/div/button[1]").click()
 time.sleep(2)
 chatbox=driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[1]/textarea")
-chatbox.send_keys("What are the weakest contributing components of the composite score?")
-time.sleep(10)
+chatbox.send_keys("What are the strongest contributing components of the composite score?")
+time.sleep(5)
 driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[2]/button").click()
-time.sleep(10)
+time.sleep(40)
 chatbox=driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[1]/textarea")
-chatbox.send_keys("Explain what the composite score means for this title in simple terms.")
-time.sleep(20)
+chatbox.send_keys("What pulled the composite score down the most?")
+time.sleep(40)
 driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[2]/button").click()
-time.sleep(15)
+time.sleep(40)
 chatbox.send_keys("Break down what factors contributed most to the composite score.")
-time.sleep(20)
+time.sleep(40)
 driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[2]/button").click()
-time.sleep(15)
+time.sleep(40)
 #-------- Close the agentic Ai pop up-----------
 
 driver.find_element(By.TAG_NAME, "body").click()
@@ -58,12 +63,25 @@ driver.find_element(By.XPATH,"/html/body/div[2]/main/div/div/div[3]/div/button[2
 time.sleep(5)
 # ________________ ASK QUES___________
 driver.find_element(By.XPATH,"/html/body/div[2]/header/div/div[2]/div/button[1]").click()
-time.sleep(2)
+time.sleep(15)
 chatbox=driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[1]/textarea")
 chatbox.send_keys("Identify my target audience and describe their demographic and psychographic traits.")
+time.sleep(40)
 driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[2]/button").click()
-time.sleep(10)
+time.sleep(40)
 chatbox=driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[1]/textarea")
 chatbox.send_keys("What platforms does my target audience prefer for this title?")
+time.sleep(40)
 driver.find_element(By.XPATH,"/html/body/div[4]/div[3]/div/form/div[2]/button").click()
-time.sleep(10)
+time.sleep(40)
+
+#-------- Close the agentic Ai pop up-----------
+
+driver.find_element(By.TAG_NAME, "body").click()
+
+#----------------Open creative ------------------------------
+wait = WebDriverWait(driver, 40)
+Creative_tab = wait.until(EC.element_to_be_clickable((By.XPATH,"/html/body/div[2]/main/div/div/div[3]/div/button[3]")))
+
+Creative_tab.click()
+
