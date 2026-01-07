@@ -35,7 +35,7 @@ time.sleep(5)
 
 # -------------------- OPEN MEDIA PAGE --------------------
 wait.until(EC.url_contains("volkno.ai"))
-driver.get("https://volkno.ai/media/1573/overview")
+driver.get("https://volkno.ai/media/1597/overview")
 
  #-------------------- OPEN Key / Art TAB --------------------
 key_tab = wait.until(
@@ -59,7 +59,8 @@ chatbox = wait.until(
     ))
 )
 chatbox.send_keys(
-    "Create a survey that exposes 5 key art options and asks users which one they prefer and why."
+    "What are the weakest contributing components of the composite score?"
+
 )
 
 send_btn = wait.until(

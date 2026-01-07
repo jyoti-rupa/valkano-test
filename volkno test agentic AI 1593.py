@@ -112,7 +112,7 @@ chatbox = wait.until(
     ))
 )
 chatbox.send_keys(
-    "Create a survey that exposes 5 key art options and asks users which one they prefer and why."
+    " a survey that exposes 5 key art options and asks users which one they prefer and why."
 )
 
 send_btn = wait.until(
